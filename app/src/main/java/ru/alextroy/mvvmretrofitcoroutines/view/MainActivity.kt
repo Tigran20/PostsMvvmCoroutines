@@ -19,19 +19,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.post_list)
 
+        initAdapter()
         showData()
     }
 
-    private fun initAdapter(data: Posts) {
+    private fun initAdapter() {
         adapter = PostsAdapter()
-        adapter.setPosts(data)
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(this)
     }
 
     private fun showData() {
         viewModel.firstTodo.observe(this, Observer {
-            initAdapter(it)
+            adapter.setPosts(it)
         })
     }
 }

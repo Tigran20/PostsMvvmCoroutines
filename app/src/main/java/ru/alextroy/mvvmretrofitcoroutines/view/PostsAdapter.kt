@@ -9,7 +9,7 @@ import ru.alextroy.mvvmretrofitcoroutines.R
 import ru.alextroy.mvvmretrofitcoroutines.model.PostItem
 
 class PostsAdapter : RecyclerView.Adapter<PostsAdapter.PostsViewHolder>() {
-    private lateinit var posts: List<PostItem>
+    private var posts: List<PostItem> = ArrayList()
 
     inner class PostsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.title)
